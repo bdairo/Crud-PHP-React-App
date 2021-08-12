@@ -22,6 +22,7 @@ export default function Popup(props) {
   const {id, openPopup, setOpenPopup, setUsers, popupType, setPopupType} = props;
   const classes = useStyles();
   return (
+
     <Dialog classes= {{paper: classes.dialogWrapper }} open ={openPopup} maxWidth ="md">
         <DialogTitle>
           <div style={{display: 'flex'}}>
@@ -29,14 +30,19 @@ export default function Popup(props) {
           <Button onClick ={()=> {setOpenPopup(false); setPopupType("form")}}  variant  = "outlined" color="secondary">  <CloseIcon/> </Button>
           </div>
         </DialogTitle>
+        
         <DialogContent dividers>
+
           {popupType === 'form'?
-          < UserForm id = {id} openPopup= {openPopup} setOpenPopup = {setOpenPopup} setUsers={setUsers} setPopupType={setPopupType}/>
+          < UserForm 
+          id = {id} openPopup= {openPopup} setOpenPopup = {setOpenPopup} setUsers={setUsers} setPopupType={setPopupType}
+          />
           :
           <DeletePage id = {id} openPopup= {openPopup} setOpenPopup = {setOpenPopup} setUsers={setUsers} setPopupType={setPopupType}/>
           }
            
         </DialogContent>
     </Dialog>
+
   );
 }

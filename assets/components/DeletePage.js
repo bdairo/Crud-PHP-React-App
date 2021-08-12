@@ -20,7 +20,6 @@ const useStyles = makeStyles(theme =>({
 
 
 export default function DeletePage(props){
-    console.log(props);
     const {id, setOpenPopup, setUsers, setPopupType} = props;
     const classes = useStyles();
 
@@ -46,8 +45,7 @@ export default function DeletePage(props){
                     <Button onClick={ () =>{handleDelete(id)}} variant = "contained" size="large" color="secondary"> Delete</Button> 
                     <Button onClick={()=>{setOpenPopup(false); setPopupType("form")}} size="large" variant = "contained" > cancel</Button>           
                 </Box>
-
-                
+  
             </Paper>
         </>
     );

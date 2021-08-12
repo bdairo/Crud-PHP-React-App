@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
 import Form from './Form';
-import { Grid, TextField, makeStyles } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme =>({
     pageContent:{
@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme =>({
 }))
 
 export default function UserForm(props){
-    const {id, OpenPopup, setOpenPopup, setUsers} = props;
+    const {id, setOpenPopup, setUsers} = props;
     const classes = useStyles();
 
     return (
